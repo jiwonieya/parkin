@@ -3,7 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem auto;
+  margin: 2rem auto;
+  gap: 1rem;
   width: 100%;
   height: 100%;
+      transition: all 0.5s;
+    @include tablet {
+      gap: 2rem;
+    }
 }

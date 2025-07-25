@@ -1,4 +1,4 @@
-
+//반응형 mixin
 @mixin tablet {
   @media screen and (min-width: 768px) {
     @content;
@@ -9,25 +9,32 @@
     @content;
   }
 }
-@mixin mobile {
-  @media screen and (max-width: 412px) {
-    @content;
-  }
+
+//컴포넌트
+@mixin btn-style($bg: var(--color-btn)) {
+  background-color: $bg;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: $font-basic;
+  outline: none;
+  border: none;
+  color: var(--color-sub-font);
+  cursor: pointer;
 }
-//임의로 추가한 것 (수진)
 
 @mixin move-btn-style($bg:var(--color-bg)) {
-  color: var(--color-main);
+  color: var(--color-btn);
   background-color: $bg;
   padding: 0.5rem 1rem;
   border-radius: 5rem;
   font-size: $font-basic;
   outline: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
+  transition: all 0.3s;
   &:hover {
-    color: var(--color-btn);
-    border: 1px solid var(--color-btn);
+    color: var(--color-btn-hover);
+    border-color: var(--color-btn-hover);
   }
 }
 

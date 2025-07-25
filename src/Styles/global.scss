@@ -1,5 +1,3 @@
-//mixin 같이 공통 파일은 App.scss로 옮겼어요 (수진) 이 메모는 병합할때 지워주세요
-
 //컴포넌트 파일
 @import "./mixin.scss";
 @import "./header.scss";
@@ -13,11 +11,13 @@
 @import "./contentsbanner.scss";
 @import "./maincontent.scss";
 
+@import "./itempagethree.scss";
 
 :root {
   --color-main: #ffa500;
   --color-sub: #ffcd00;
   --color-btn: #ff6103;
+  --color-btn-hover: #e64500;
   --color-bg: #fef9f3;
   --color-error: #ff0000;
   --color-point: #426a2d;

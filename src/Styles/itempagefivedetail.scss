@@ -1,0 +1,80 @@
+.top-item {
+    margin-top: 8rem;
+}
+
+#contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    margin: 5rem auto;
+    background-color: var(--color-bg);
+
+
+
+    .item-content {
+        margin: 150px 0;
+        padding: 40px;
+        background-color: var(--color-bg);
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.3s ease;
+
+        img {
+            width: 95%;
+            height: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h3 {
+            @include main-large;
+            margin: 2rem auto;
+            padding-bottom: 3rem;
+            color: var(--color-main);
+        }
+
+        P {
+            @include sub-basic;
+            padding-bottom: 1rem;
+            font-weight: bolder;
+        }
+
+        p:nth-child(4) {
+            @include sub-basic;
+            font-weight: bolder;
+
+        }
+
+        p:nth-child(5) {
+            @include sub-basic;
+            font-weight: bolder;
+        }
+    }
+    .item-content:first-of-type p:first-of-type 
+        {
+            color: var(--color-point);
+            @include sub-medium;
+            font-weight: bolder;
+        }
+        
+    .item-content:nth-of-type(1) p:nth-of-type(3){
+            @include sub-medium;
+            color: var(--color-sub);
+            font-weight: bolder;
+            padding: 2rem;
+    }
+    .item-content:nth-of-type(1) p:nth-of-type(2){
+            @include sub-basic;
+            font-weight: bolder;
+            padding: 2rem;
+    }
+    .item-content:nth-of-type(1) p:nth-of-type(4){
+            @include sub-medium;
+            font-weight: bolder;
+            padding: 2rem;
+    }
+}

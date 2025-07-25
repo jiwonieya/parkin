@@ -1,29 +1,47 @@
-
-
 .slider-container {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
   border: none;
+  display: inline;
+  width: 100%;
+  
+
+  height: 250px;
+  
+  @include tablet {
+    height: 200px;
+  }
+  
+  @include desktop {
+    display: none;
+  }
 
   .slider-wrapper {
     display: flex;
     transition: transform 0.4s ease-in-out;
+    height: 100%;
+    
+    // 태블릿에서만 간격 추가
+    @include tablet {
+      gap: 15px;
+    }
   }
 
   .slide {
     flex-shrink: 0;
-
+    height: 100%;
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
   }
 
   .nav-arrow {
     position: absolute;
-    top: 37.5%;
+    top: 47.5%;
     transform: translateY(-50%);
     font-size: 50px;
     color: #111;
@@ -32,18 +50,12 @@
     padding: 10px;
     cursor: pointer;
     background-color: rgba(0,0,0,0);
-    @include tablet{
-        top: 20%;
+    &.prev { left: -5px; } 
+    &.next { right: -5px; } 
+    
+    &:hover {
+      color: var(--color-main);
     }
-
-    &.prev { left: -5px; }
-    &.next { right: -5px; }
-  }
-      .nav-arrow:hover{
-  color: var(--color-main);
-}
-  @include desktop {
-    display: none;
   }
 }
 
@@ -59,16 +71,18 @@
 
     .grid-item img {
       width: 100%;
+      height: auto;
     }
   }
 }
 
-//텍스트 컨테이너
+// 텍스트 컨테이너
 .text-container {
   position: relative;
   width: 100%;
-  margin: 0 auto 20px;
-  border-top:  1px solid #222;
+  margin: 1.5rem auto;
+  //간격이 너무 붙어있는게 답답해보여서 손좀 댔는데 별로시라면 0으로 가셔도 됩니다 (수진_이 메모는 병합때 꼭.. 지워주세요)
+  border-top: 1px solid #222;
   @include main-basic;
 }
 
@@ -77,7 +91,7 @@
   justify-content: space-between;
   gap: 20px;
   padding: 20px 25px;
-  padding-bottom: none;
+  padding-bottom: 10px;
 }
 
 .text-flex-tablet {
@@ -87,10 +101,10 @@
   padding: 20px;
   flex-wrap: wrap;
   padding-bottom: 1px;
-  @include desktop{
+  
+  @include desktop {
     width: 85%;
     margin: 0 auto;
-
   }
 }
 
@@ -100,10 +114,10 @@
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s;
-}
 
-.text-item-mobile:hover {
-  color: var(--color-main);
+  &:hover {
+    color: var(--color-main);
+  }
 }
 
 .text-item-tablet {
@@ -111,15 +125,21 @@
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
-}
+  margin-bottom: 10px;
+  
+  @include desktop {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
 
-.text-item-tablet:hover {
-  color: var(--color-main);
+  &:hover {
+    color: var(--color-main);
+  }
 }
 
 .text-nav-button {
   position: absolute;
-  top: 42.5%;
+  top: 50%;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
@@ -130,19 +150,19 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-}
-.text-nav-button:hover {
-  color: var(--color-main);
-}
-
-.text-nav-button.prev {
-  left: -10px;
   background-color: rgba(0,0,0,0);
-}
 
-.text-nav-button.next {
-  right: -10px;
-  background-color: rgba(0,0,0,0);
+  &:hover {
+    color: var(--color-main);
+  }
+
+  &.prev {
+    left: -10px;
+  }
+
+  &.next {
+    right: -10px;
+  }
 }
 
 .text-indicators {
@@ -161,80 +181,7 @@
   transition: background-color 0.3s;
 }
 
-.slider-container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-
-}
-
-.slider-wrapper {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
-
-.slide {
-  flex-shrink: 0;
-  height: 200px;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.nav-arrows {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.prev-arrow {
-  left: 10px;
-}
-
-.next-arrow {
-  right: 10px;
-}
-
-.slide-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.slide-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.slide-indicator.active {
-  background-color: white;
-}
-
-/* 반응형 */
+// 반응형 미디어 쿼리
 @media (max-width: 768px) {
   .text-nav-button {
     display: flex;
@@ -243,9 +190,13 @@
   .text-indicators {
     display: flex;
   }
+  
+  .slider-container {
+    height: 250px;
+  }
 }
-
-@media (min-width: 769px) {
+//가리는 문제 해결
+@media (min-width: 769px) and (max-width: 1439px) {
   .text-nav-button {
     display: none;
   }
@@ -253,48 +204,14 @@
   .text-indicators {
     display: none;
   }
-}
-
-// 반응형 대응
-@include mobile {
+  
   .slider-container {
-    width: 100%;
-    max-width: 412px;
-    height: 250px;
-  }
-  
-  .slide {
-    width: 412px; // 모바일에서도 412px 고정
-  }
-  
-  .text-container ul {
-    gap: 8px;
-    
-    li {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
+    height: 200px;
   }
 }
 
-@include tablet {
+@media (min-width: 1440px) {
   .slider-container {
-    max-width: 500px;
-    height: 300px;
-  }
-  
-  .slide {
-    width: 500px; // 태블릿에서는 500px
-  }
-}
-
-@include desktop {
-  .slider-container {
-    max-width: 600px;
-    height: 400px;
-  }
-  
-  .slide {
-    width: 600px; // 데스크톱에서는 600px
+    display: none;
   }
 }

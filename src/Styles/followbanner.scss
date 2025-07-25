@@ -1,41 +1,47 @@
 .follow-banner {
-  display: none; // 모바일 숨김
+  display: none; // 기본 숨김
 
+  // tablet 이상 화면 (768px 이상)
   @include tablet {
     display: block;
-    position: absolute; // 절대 위치
-    right: 0;
-    width: 260px;
-    border-radius: 15px 0 0 15px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 220px;
+    border-radius: 15px 0 0 0;
     overflow: hidden;
     @include sub-medium;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: top 0.3s ease; // 부드럽게 움직임
+    background-color: var(--color-white);
+  }
+
+  @include desktop {
+    display: block;
   }
 
   .banner-item {
     display: flex;
-    flex-direction: column; // 아이콘과 텍스트 세로 정렬
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 16px 0;
+    padding: 14px 0;
     cursor: pointer;
-    color: var(--color-main-font);
     border-bottom: 1px solid var(--color-dark-gray);
     width: 100%;
-    height: 90px; // 크기 조절
+    height: 75px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
 
     .icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 22px;
+      margin-bottom: 6px;
       color: var(--color-main-font);
     }
 
     .text {
       @include sub-basic;
+      color: var(--color-main-font);
     }
 
     &.orange {
@@ -44,22 +50,54 @@
 
     &.yellow {
       background-color: var(--color-sub);
-      border-color: var(--color-dark-gray);
     }
 
     &:last-child {
       border-bottom: none;
-      border-radius: 0 0 15px 0;
     }
 
     &:hover {
       background-color: var(--color-dark-gray);
       transform: scale(1.05);
-      color: var(--color-white);
 
-      .icon {
+      .icon,
+      .text {
         color: var(--color-white);
       }
     }
+  }
+}
+
+.floating-close-btn {
+  display: none; // 기본 숨김
+
+  @include tablet {
+    display: flex;
+  }
+
+  @include desktop {
+    display: flex;
+  }
+
+  position: fixed;
+  bottom: 400px;
+  right: 100px;
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.1);
   }
 }

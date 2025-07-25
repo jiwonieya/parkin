@@ -12,19 +12,38 @@
     span {
       color: var(--color-main);
     }
+    transition: all 0.5s;
+    @include tablet {
+      @include main-large;
+    }
+    @include desktop {
+      @include main-big;
+      font-weight: 500;
+    }
   }
   .circle {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
+    width: 100%;
+    gap: 1rem;
+    transition: all 0.5s;
+    @include tablet {
+      margin: 1rem 0;
+      gap: 2.5rem;
+    }
+    @include desktop {
+      margin: 1.5rem 0;
+      gap: 5.5rem;
+    }
     li {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      margin: 0 0.5rem;
+      cursor: pointer;
       .circle-bg {
         width: 60px;
         height: 60px;
@@ -37,11 +56,29 @@
         font-size: $font-medium;
         color: var(--color-sub);
         margin: 0.5rem 0;
+        transition: all 0.5s;
+        @include tablet {
+          width: 80px;
+          height: 80px;
+          font-size: $font-large;
+        }
+        @include desktop {
+          width: 100px;
+          height: 100px;
+          font-size: $font-big;
+        }
       }
       p {
         @include main-small;
         font-size: 0.6rem;
         line-height: $line-height-normal;
+        transition: all 0.5s;
+        @include tablet {
+          font-size: 0.9rem;
+        }
+        @include desktop {
+          font-size: 1.2rem;
+        }
       }
     }
   }

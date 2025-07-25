@@ -1,8 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import keywordData from "../assets/keywords.json";
+import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MainContent = () => {
   const [isTablet, setIsTablet] = useState(window.innerWidth >= 768);
+  const sectionsRef = useRef([]);
+
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.innerWidth >= 768);
@@ -11,11 +18,58 @@ const MainContent = () => {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const navigate = useNavigate();
+
+  const handleClick = (idx) => {
+    if (idx === 0) {
+      navigate("/itempage"); // ItemPage로 이동
+    }
+    if (idx === 1) {
+      navigate("/itempagtwo");
+    }
+    if (idx === 2) {
+      navigate("/itempagthree");
+    }
+    if (idx === 3) {
+      navigate("/itempagfour");
+    }
+    if (idx === 4) {
+      navigate("/itempagefive");
+    }
+  };
+
+  useEffect(() => {
+    sectionsRef.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            end: "bottom center",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
     <main className="main-content">
-      {keywordData.map((section) => (
-        <section className="main-map" key={section.id}>
+      {keywordData.map((section, idx) => (
+        <section
+          className="main-map"
+          key={section.id}
+          ref={(el) => (sectionsRef.current[idx] = el)}
+        >
           <img
             src={
               isTablet
@@ -24,18 +78,26 @@ const MainContent = () => {
             }
             alt={section.img.alt}
           />
-          <h2>{section.title}</h2>
-          <h3>
-            {section.sub}
-            <span>{section.sub2}</span>
-          </h3>
-          <div>
-            <p>{section.text1}</p>
-            <p>{section.text2}</p>
-            <p>{section.text3}</p>
-            <p>{section.text4}</p>
+          <div className="main-title">
+            <h2>{section.title}</h2>
+            <h3>
+              {section.sub}
+              <span>{section.sub2}</span>
+            </h3>
+            <div className="main-text">
+              <p>{section.text1}</p>
+              <p>{section.text2}</p>
+              <p>{section.text3}</p>
+              <p>{section.text4}</p>
+            </div>
+            <button
+              onClick={() => {
+                handleClick(idx);
+              }}
+            >
+              서비스 자세히 보기　〉
+            </button>
           </div>
-          <button>서비스 바로가기 〉</button>
         </section>
       ))}
     </main>

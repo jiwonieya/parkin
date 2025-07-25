@@ -11,13 +11,13 @@ a{
 li{
   list-style: none;
 }
-//바디 추가 (수진) 이 메모 병합할때 지워주세요
 body{
   font-family: 'SUIT';
   font-weight: 500;
   word-break: keep-all;
   background-color: var(--color-bg);
-
+  overflow-x: hidden;
+  //가로스크롤 없애기
 }
 h1{
   font-family: 'SBAggroB';

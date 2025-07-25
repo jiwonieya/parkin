@@ -1,17 +1,81 @@
 .contents-banner {
+  margin: 1rem auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
+  position: relative;
+  color: var(--color-sub-font);
   .CBtxt {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    gap: 1rem;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    @include tablet {
+      left: 8%;
+    }
+    @include desktop {
+      left: 16%;
+    }
     h2 {
+      @include main-basic;
+      font-size: $font-medium;
+      span {
+        color: var(--color-main);
+      }
+      transition: all 0.5s;
+      @include tablet {
+        @include main-large;
+      }
+      @include desktop {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
     }
     p {
+      line-height: $line-height-normal;
+      transition: all 0.5s;
+      @include tablet {
+        font-size: 1.25rem;
+      }
+      @include desktop {
+        font-size: $font-medium;
+      }
     }
     button {
+      @include main-basic;
       @include move-btn-style();
-      width: 50%;
+      font-size: $font-regular;
+      width: 220px;
     }
   }
-  img {
+  .imgbox {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    @include tablet {
+      height: auto;
+      width: 100%;
+      height: 300px;
+    }
+    @include desktop {
+      height: auto;
+      width: 100%;
+      height: 300px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
   }
 }

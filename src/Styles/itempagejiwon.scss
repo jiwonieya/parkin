@@ -1,0 +1,283 @@
+.top-item {
+  img {
+    margin-bottom: 5rem auto;
+    width: 90%;
+    height: auto;
+  }
+
+  text-align: center;
+
+  h1 {
+    color: var(--color-main);
+    margin: 2rem auto;
+    @include main-large;
+  }
+
+  h2 {
+    @include main-basic;
+    margin: 1rem 0;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+    @include sub-basic;
+  }
+}
+
+//설명 부분 목록
+.item-list {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  position: sticky;
+  top: 0;
+  background-color: #fef8f4;
+  z-index: 999;
+
+  h3 {
+    color: var(--color-main);
+    @include main-large;
+    margin: 0 auto;
+  }
+
+  //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid var(--color-main-font);
+
+    li {
+      position: relative;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+
+      // 밑줄 호버처리 애니메이션 절대 수정 금지
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--color-main);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: var(--color-bg);
+      }
+    }
+  }
+}
+
+//테블릿 사이즈
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@include tablet {
+  //상단 이미지 및 기능 제목, 간단내용
+  .top-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    img {
+      max-width: 50%;
+      height: 60%;
+    }
+
+    h1 {
+      color: var(--color-main);
+      margin: 3.5rem auto;
+      margin-top: 5rem;
+      @include main-large;
+    }
+
+    h2{
+        @include main-basic;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5rem;
+      @include sub-basic;
+    }
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-large;
+      margin: 0 auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//데스크탑 사이즈
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@include desktop {
+  //상단 이미지 및 기능 제목, 간단내용
+  .top-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    img {
+      max-width: 60%;
+      height: 60%;
+    }
+
+    h1 {
+      color: var(--color-main);
+      margin: 5rem auto;
+      @include main-big;
+    }
+
+    h2{
+        @include main-large;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5rem;
+      @include sub-medium;
+    }
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-big;
+      margin: 1rem auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        button{
+            @include sub-medium;
+        }
+
+      }
+    }
+  }
+}
+
+.contents {
+  .item-content {
+    h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p,
+    li {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    img {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+  }
+}
