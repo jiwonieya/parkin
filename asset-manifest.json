@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/parkin/static/css/main.371f9a65.css",
+    "main.js": "/parkin/static/js/main.628c0672.js",
+    "index.html": "/parkin/index.html",
+    "main.371f9a65.css.map": "/parkin/static/css/main.371f9a65.css.map",
+    "main.628c0672.js.map": "/parkin/static/js/main.628c0672.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.371f9a65.css",
+    "static/js/main.628c0672.js"
+  ]
+}
