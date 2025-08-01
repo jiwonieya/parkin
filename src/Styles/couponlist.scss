@@ -1,0 +1,46 @@
+.coupon-list-popup{
+    @include sub-medium;
+    ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 3rem;
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        border-bottom: 1px solid #222;
+        padding: 1rem;
+        color: var(--color-dark-gray);
+        p{
+            color: var(--color-main-font);
+            @include sub-medium;
+        }
+    }
+}
+
+.back-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 1rem 0.5rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    @include sub-medium;
+    background-color: var(--color-btn);
+    color: var(--color-white);
+}
+.back-btn:hover{
+        background-color: var(--color-btn-hover);
+    }
+}
+

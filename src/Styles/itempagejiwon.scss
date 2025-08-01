@@ -1,0 +1,498 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.top-item {
+  text-align: center;
+  margin-bottom: 12rem;
+
+  @include desktop {
+    margin-bottom: 17rem;
+  }
+
+  img {
+    margin-bottom: 5rem auto;
+    width: 90%;
+    height: auto;
+
+    @include desktop {
+      width: auto !important;
+      max-width: 35% !important;
+      height: auto;
+      display: block;
+    }
+  }
+
+  h1 {
+    color: var(--color-main);
+    margin: 2rem auto;
+    @include main-large;
+  }
+
+  h2 {
+    @include main-basic;
+    margin: 1rem 0;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+    @include sub-basic;
+  }
+}
+
+//설명 부분 목록
+.item-list {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  position: sticky;
+  top: 0;
+  background-color: #fef8f4;
+  z-index: 999;
+
+  h3 {
+    color: var(--color-main);
+    @include main-large;
+    margin: 0 auto;
+  }
+
+  //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid var(--color-main-font);
+
+    li {
+      position: relative;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+
+      // 밑줄 호버처리 애니메이션 절대 수정 금지
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--color-main);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: var(--color-bg);
+        @include sub-basic;
+      }
+    }
+  }
+}
+
+//테블릿 사이즈
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@include tablet {
+  //상단 이미지 및 기능 제목, 간단내용
+  .top-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    img {
+      max-width: 50%;
+      height: 60%;
+    }
+
+    h1 {
+      color: var(--color-main);
+      margin: 3.5rem auto;
+      margin-top: 5rem;
+      @include main-big;
+    }
+
+    h2 {
+      @include main-large;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5rem;
+      @include sub-medium;
+    }
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-big;
+      margin: 0 auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        button {
+          @include sub-basic;
+        }
+      }
+    }
+  }
+}
+
+//데스크탑 사이즈
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@include desktop {
+  //상단 이미지 및 기능 제목, 간단내용
+  .top-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    img {
+      max-width: 60%;
+      height: 60%;
+    }
+
+    h1 {
+      color: var(--color-main);
+      margin: 5rem auto;
+      @include main-big;
+    }
+
+    h2 {
+      @include main-large;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5rem;
+      @include sub-medium;
+    }
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-big;
+      margin: 1rem auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        button {
+          @include sub-medium;
+        }
+      }
+    }
+  }
+}
+
+.contents {
+  .item-content {
+    margin: 12rem 0;
+    position: relative;
+
+    h3 {
+      @include main-large;
+      text-align: center;
+
+      @include tablet {
+        @include main-big;
+      }
+
+      @include desktop {
+        @include main-big;
+      }
+    }
+
+    .sub-ment {
+      color: var(--color-point);
+      @include main-basic;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      @include tablet {
+        @include main-large;
+      }
+
+      @include desktop {
+        @include main-large;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+
+      @include tablet {
+        max-width: 400px;
+      }
+
+      @include desktop {
+        max-width: 500px;
+      }
+    }
+
+    h2 {
+      @include main-basic;
+      text-align: center;
+      margin-top: 3rem;
+
+      @include tablet {
+        @include main-large;
+      }
+
+      @include desktop {
+        @include main-large;
+      }
+    }
+
+    p {
+      @include sub-basic;
+      margin: 1rem 0;
+      text-align: center;
+
+      @include tablet {
+        @include sub-medium;
+      }
+
+      @include desktop {
+        @include sub-medium;
+      }
+    }
+
+    // 아이콘 공통 스타일
+    .parking-1,
+    .parking-2,
+    .small-car,
+    .disabled,
+    .pregnant {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: var(--color-main);
+      width: 48px;
+      height: 48px;
+
+      @include tablet {
+        width: 60px;
+        height: 60px;
+      }
+
+      @include desktop {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    // 개별 위치
+    .parking-1 {
+      top: 32%;
+      left: 32%;
+
+      @include tablet {
+        top: 31%;
+        left: 40%;
+      }
+
+      @include desktop {
+        top: 31%;
+        left: 44.5%;
+      }
+    }
+
+    .parking-2 {
+      top: 24%;
+      left: 77.5%;
+
+      @include tablet {
+        top: 24.5%;
+        left: 66.5%;
+      }
+
+      @include desktop {
+        top: 24%;
+        left: 58%;
+      }
+    }
+
+    .small-car {
+      top: 39%;
+      left: 60%;
+
+      @include tablet {
+        top: 37%;
+        left: 56%;
+      }
+
+      @include desktop {
+        top: 38%;
+        left: 53%;
+      }
+    }
+
+    .disabled {
+      top: 45%;
+      left: 16%;
+
+      @include tablet {
+        top: 42%;
+        left: 31%;
+      }
+
+      @include desktop {
+        top: 43%;
+        left: 40%;
+      }
+    }
+
+    .pregnant {
+      top: 47%;
+      left: 76.5%;
+
+      @include tablet {
+        top: 44%;
+        left: 65.5%;
+      }
+
+      @include desktop {
+        top: 45.5%;
+        left: 58%;
+      }
+    }
+
+    .all-icon-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem; //아이콘 간격
+      margin: 1.5rem 0;
+
+      @include desktop {
+        grid-gap: 0.5rem;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .icon-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        svg {
+          width: 40px;
+          height: 40px;
+
+          @include tablet {
+            width: 60px;
+            height: 60px;
+          }
+
+          @include desktop {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+  }
+}

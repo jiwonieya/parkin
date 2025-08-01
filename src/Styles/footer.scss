@@ -1,0 +1,173 @@
+.footer-page {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  z-index: 999;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+
+  .footer-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--color-light-gray);
+
+    @include desktop {
+      align-items: flex-start;
+      width: 1440px; // 데스크탑 기준 max-width
+      margin: 0 auto;
+    }
+
+    /* 이미지 + 회사명 */
+    .img-company-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        flex-direction: row;
+        gap: 3rem;
+      }
+
+      @include desktop {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      img {
+        width: 260px;
+        height: 95px;
+
+        @include tablet {
+          width: 200px;
+          height: auto;
+        }
+      }
+
+      .company {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+
+        @include tablet {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        @include desktop {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+
+      @include desktop {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    p {
+      @include sub-basic;
+      text-align: center;
+
+      @include tablet {
+        @include sub-medium;
+      }
+    }
+
+    /* 새로 만든 footer-bottom */
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+
+      @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .icon-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        order: 0;
+        svg {
+          width: 48px;
+          height: 48px;
+          transition: transform 0.3s ease, color 0.3s ease;
+          cursor: pointer;
+
+          @include tablet {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .youtube-icon:hover {
+          transform: scale(1.2);
+          color: #ff5555;
+        }
+
+        .insta-icon:hover {
+          transform: scale(1.2);
+          color: #b42c78;
+        }
+
+        .facebook-icon:hover {
+          transform: scale(1.2);
+          color: #1977f3;
+        }
+      }
+
+      .note {
+        order: 1;
+
+        ul {
+          display: flex;
+          gap: 1rem;
+          padding: 0;
+          margin: 0;
+
+          li {
+            @include sub-basic;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: var(--color-dark-gray);
+            }
+          }
+        }
+
+        @include desktop {
+          order: 2;
+        }
+      }
+
+      h1 {
+        order: 2;
+        @include sub-basic;
+        @include desktop {
+          order: 1;
+        }
+      }
+    }
+  }
+}

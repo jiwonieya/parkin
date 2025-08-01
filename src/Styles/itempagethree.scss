@@ -1,0 +1,396 @@
+//상단 이미지 및 기능 제목, 간단내용
+
+.three-item-header {
+  text-align: center;
+  img {
+    margin-bottom: 2rem;
+    width: 90%;
+  }
+  .header-text {
+    h1 {
+      color: var(--color-main);
+      margin: 1.5rem auto;
+      @include main-large;
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-family: "SBAggroB";
+      font-weight: 500;
+      font-size: $font-medium;
+      color: var(--color-dark-gray);
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
+      @include sub-basic;
+      font-weight: bolder;
+      line-height: 1.5;
+    }
+  }
+}
+
+//설명 부분 목록
+.three-item-list {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  position: sticky;
+  top: 0;
+  background-color: #fef8f4;
+  z-index: 999;
+  h3 {
+    color: var(--color-main);
+    @include main-large;
+    margin: 0 auto;
+  }
+
+  //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto 5rem auto;
+    border-bottom: 1px solid var(--color-main-font);
+    width: 95%;
+    li {
+      position: relative;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+
+      // 밑줄 호버처리 애니메이션 절대 수정 금지
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--color-main);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: var(--color-bg);
+      }
+    }
+  }
+}
+
+//테블릿 사이즈
+@include tablet {
+  //상단 이미지 및 기능 제목, 간단내용
+  .three-item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 1rem;
+    img {
+      max-width: 50%;
+      height: 60%;
+    }
+    .header-text {
+      margin: 2rem;
+      h1 {
+        color: var(--color-main);
+        margin-top: 0;
+        margin-bottom: 2rem;
+        @include main-large;
+      }
+      h2 {
+        font-family: "SBAggroB";
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 2rem;
+        @include sub-basic;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  .three-item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-large;
+      margin: 0 auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//테블릿과 데스크톱의 애매한 중간사이
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .three-item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 1rem;
+    img {
+      max-width: 50%;
+    }
+    .header-text {
+      h1 {
+        color: var(--color-main);
+        margin-bottom: 1rem;
+        margin-top: 0;
+        @include main-large;
+      }
+      h2 {
+        font-family: "SBAggroB";
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 2rem;
+        @include sub-basic;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+//데스크탑 사이즈
+@include desktop {
+  //상단 이미지 및 기능 제목, 간단내용
+  .three-item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    img {
+      max-width: 60%;
+    }
+    .header-text {
+      h1 {
+        color: var(--color-main);
+        margin-bottom: 3rem;
+        margin-top: 0;
+        @include main-large;
+      }
+      h2 {
+        font-family: "SBAggroB";
+        font-weight: 500;
+        font-size: $font-medium;
+        margin-bottom: 1rem;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 3rem;
+        @include sub-basic;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  .three-item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h3 {
+      color: var(--color-main);
+      @include main-large;
+      margin: 1rem auto;
+    }
+
+    //클릭 시 위치 이동값 개인적 으로 위치 맞춰지게 추가 필수
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem auto;
+      margin-bottom: 5rem;
+      border-bottom: 1px solid var(--color-main-font);
+      width: 95%;
+
+      li {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        // 밑줄 호버처리 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background-color: var(--color-main);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+      button {
+        font-size: $font-medium;
+      }
+    }
+  }
+}
+
+//상세내용
+.page-three-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5rem;
+  margin: 5rem auto;
+  line-height: 1.7;
+  width: 100%;
+  height: auto;
+  @include desktop {
+    max-width: 900px;
+    margin: 5rem auto;
+  }
+  section {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    .title-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .section-title {
+        font-family: "SBAggroB";
+        font-size: $font-large;
+        font-weight: $font-weight-light;
+        color: var(--color-btn);
+      }
+      .section-subtitle {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        background-color: var(--color-sub);
+        padding: 0 1rem;
+        color: var(--color-main-font);
+      }
+      p {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+    }
+    div {
+      h2 {
+        color: var(--color-point);
+        font-size: $font-medium;
+        font-weight: 800;
+        margin: 0.5rem 0;
+        span {
+          color: var(--color-main-font);
+          font-size: 1.2rem;
+        }
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      span{
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-main);
+      }
+    }
+    .content-text {
+      margin: 2rem 0;
+      p {
+        font-size: 1rem;
+        font-weight: $font-weight-black;
+      }
+    }
+    img {
+      width: 90%;
+      margin: 5rem auto;
+    }
+  }
+
+  .three-item-content4 {
+    img{
+      width: 70%;
+    }
+    .buy-button {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 5rem;
+      button {
+        @include btn-style();
+        &:hover {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}

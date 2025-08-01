@@ -1,0 +1,214 @@
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width:1024px) {
+        @content;
+    }
+}
+
+
+.top-item {
+    margin-top: 8rem;
+    @include desktop{
+        width: 90%;
+        height: auto;
+    }
+}
+
+.item-list{
+    h3{
+        @include main-large;
+        font-weight: 100;
+        color: var(--color-main);
+        @include tablet{
+            font-weight: 200;
+            @include main-large;
+        }
+        @include desktop{
+            font-weight: 500;
+            @include main-big;
+        }
+    }
+}
+
+#contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 90%;
+    background-color: var(--color-bg);
+
+
+
+    .item-content {
+        display: inline-block;
+        margin: 150px 0;
+        padding: 40px;
+        background-color: var(--color-bg);
+        border-radius: 10px;
+        opacity: 0;
+        height: 100%;
+        transform: translateY(50px);
+        transition: all 0.3s ease;
+
+        img {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            box-shadow: 5px 5px 10px #999;
+            margin-bottom: 8rem;
+            @include desktop{
+                width: 70%;
+                height: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        h3 {
+            @include main-large;
+            margin: 2rem auto;
+            padding-bottom: 3rem;
+            color: var(--color-main);
+        }
+
+        P {
+            @include sub-basic;
+            padding-bottom: 1rem;
+            font-weight: bolder;
+        }
+
+        p:nth-child(4) {
+            @include sub-basic;
+            font-weight: bolder;
+
+        }
+
+        p:nth-child(5) {
+            @include sub-basic;
+            font-weight: bolder;
+        }
+    }
+    .item-content:first-of-type p:first-of-type 
+        {
+            color: var(--color-point);
+            @include sub-large;
+            font-weight: bolder;
+
+        }
+        
+    .item-content:nth-of-type(1) p:nth-of-type(3){
+            @include sub-medium;
+            color: var(--color-sub-font);
+            font-weight: bolder;
+            text-shadow: 1px 1px 10px #222;
+            padding: 2rem;
+            border: 3px solid var(--color-point);
+            background-color: var(--color-main);
+            border-radius: 2rem;
+            display: inline-block;
+    }
+    .item-content:nth-of-type(1) p:nth-of-type(2){
+            @include sub-basic;
+            font-weight: bolder;
+            padding: 2rem;
+            @include tablet{
+                @include sub-medium;
+            }
+            @include desktop{
+            @include sub-medium;
+        }
+    }
+    .item-content:nth-of-type(1) p:nth-of-type(4){
+            @include sub-medium;
+            font-weight: bolder;
+            padding: 2rem;
+    }
+    .item-content:nth-of-type(2) p{
+            @include sub-medium;
+            font-weight: bolder;
+            padding: 1rem;
+            color: var(--color-point);
+    }
+    .item-content:nth-of-type(3) p{
+        @include sub-basic;
+        font-weight: bolder;
+        padding: 2rem;
+        @include tablet{
+            @include sub-medium;
+        }
+        @include desktop{
+            @include sub-medium;
+        }
+    }
+    .item-content:nth-of-type(3) p:nth-of-type(4){
+        @include sub-medium;
+        color: var(--color-point);
+        @include tablet{
+            @include sub-large;
+        }
+                @include desktop{
+            @include sub-large;
+        }
+    }
+    .item-content:nth-of-type(4) p{
+        @include sub-basic;
+        font-weight: bolder;
+        padding: 2rem;
+        @include tablet{
+            @include sub-medium;
+        }
+                @include desktop{
+            @include sub-medium;
+        }
+    }
+    .item-content:nth-of-type(4) p:nth-of-type(4){
+        @include sub-medium;
+        color: var(--color-point);
+        @include tablet{
+            @include sub-large;
+        }
+        @include desktop{
+            @include sub-large;
+        }
+    }
+    .item-content:nth-of-type(5) p:nth-of-type(1){
+        @include sub-medium;
+        font-weight: bolder;
+            padding: 1rem;
+            color: var(--color-point);
+    }
+    .item-content:nth-of-type(5) p:nth-of-type(2){
+        @include sub-medium;
+        font-weight: bolder;
+            padding: 2rem;
+            padding-bottom: 5rem;
+            color: var(--color-point);
+    }
+    .item-content:nth-of-type(5) p:nth-of-type(3){
+        @include sub-medium;
+        padding-bottom: 5rem;
+    }
+    .item-content:nth-of-type(5) p:nth-of-type(4){
+        @include sub-medium;
+        padding-bottom: 5rem;
+    }
+}
+
+
+@include tablet{
+    .item-content:first-of-type p:nth-of-type(2){
+        @include sub-large;
+    }
+}
+
+
+
+
+
+// @include desktop{}

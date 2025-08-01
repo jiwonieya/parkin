@@ -1,0 +1,43 @@
+//반응형 mixin
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+//컴포넌트
+@mixin btn-style($bg: var(--color-btn)) {
+  background-color: $bg;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: $font-basic;
+  outline: none;
+  border: none;
+  color: var(--color-sub-font);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-btn-hover);
+  }
+}
+
+@mixin move-btn-style($bg: var(--color-bg)) {
+  color: var(--color-btn);
+  background-color: $bg;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  font-size: $font-basic;
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    color: var(--color-btn-hover);
+    border-color: var(--color-btn-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}

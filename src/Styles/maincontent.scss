@@ -1,0 +1,102 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  gap: 2rem;
+  transition: all 0.5s;
+  @include tablet {
+    gap: 3rem;
+  }
+  @include desktop {
+    gap: 4rem;
+  }
+  .main-map {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.5s;
+    @include tablet {
+      max-width: 900px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1rem;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        .main-title {
+          text-align: right;
+          align-items: flex-end;
+        }
+      }
+      img {
+        width: 370px;
+      }
+    }
+    @include desktop {
+      max-width: 1200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      img {
+        width: 500px;
+      }
+    }
+    .main-title {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      transition: all 0.5s;
+    }
+    h2 {
+      @include main-basic;
+      font-size: $font-medium;
+      @include desktop {
+        font-size: $font-large;
+      }
+    }
+    h3 {
+      @include main-large;
+      font-size: 1.7rem;
+      @include desktop {
+        font-size: 2.2rem;
+      }
+    }
+    span {
+      @include main-large;
+      font-size: 1.7rem;
+      color: var(--color-point);
+      @include desktop {
+        font-size: 2.2rem;
+      }
+    }
+    .main-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      p {
+        font-size: 0.9rem;
+        @include desktop {
+          font-size: $font-medium;
+        }
+      }
+    }
+    button {
+      @include move-btn-style();
+      font-size: $font-regular;
+      width: 200px;
+      @include desktop {
+        font-size: $font-basic;
+        width: 230px;
+      }
+    }
+  }
+}

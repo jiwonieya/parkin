@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "img": {
+      "mobile": "/image/images/navimobile.png",
+      "tablet": "/image/images/navi.png",
+      "alt": "주차장 빈자리 확인 이미지"
+    },
+    "title": "이제 빙빙 돌 필요 없어요.",
+    "sub": "앱에서 ",
+    "sub2": "바로 확인 가능!",
+    "text1": "위치기반 주변 주차장 안내 제공",
+    "text2": "실시간 주차 현황 확인",
+    "text3": "전기차 · 경차 · 장애인 · 임산부 등 우선 주차 구역 안내"
+  },
+  {
+    "id": 2,
+    "img": {
+      "mobile": "/image/images/mainmobile.png",
+      "tablet": "/image/images/main.png",
+      "alt": "주차 예약 및 결제 이미지"
+    },
+    "title": "도착했을 때 ",
+    "sub": "자리 없을 ",
+    "sub2": "걱정 끝!",
+    "text1": "출발 전, 예상 도착 시간에 주차 가능한 예약 시스템",
+    "text2": "어플 및 사이트에서 주차 요금 결제",
+    "text3": "차량 번호판 자동인식으로 자동 결제",
+    "text4": ""
+  },
+  {
+    "id": 3,
+    "img": {
+      "mobile": "/image/images/membershipmobile.png",
+      "tablet": "/image/images/membership.png",
+      "alt": "정기권 및 멤버쉽 혜택 이미지"
+    },
+    "title": "주차도 하고, 쇼핑도 하고 ",
+    "sub2": "뭘 해도 이득!",
+    "text1": "주차장 정기권 구매 시 할인 혜택을 제공",
+    "text2": "멤버쉽 가입 시 다양한 혜택이 제공",
+    "text3": "제휴 매장 이용 시 주차비가 할인"
+  },
+  {
+    "id": 4,
+    "img": {
+      "mobile": "/image/images/CCTVmobile.png",
+      "tablet": "/image/images/CCTV.png",
+      "alt": "CCTV 이미지"
+    },
+    "title": "차는 주차장에 있지만, ",
+    "sub2": "마음은 안심하세요",
+    "text1": "CCTV 연동으로 앱에서 내 차를 실시간으로 확인",
+    "text2": "예기치 못한 사고에도 빠르게 대처 가능",
+    "text3": "언제, 어디서든, 안전한 지킴이"
+  },
+  {
+    "id": 5,
+    "img": {
+      "mobile": "/image/images/savemobile.png",
+      "tablet": "/image/images/save.png",
+      "alt": "주차자리 공유 안내 이미지"
+    },
+    "title": "출근 뒤 비어있는 내 주차자리로 ",
+    "sub2": "돈을 벌자",
+    "text1": "사용하지 않는 개인 주차 공간을 공유하여 수익 창출",
+    "text2": " 필요한 사람에게 저렴하게 주차 공간을 제공하는 P2P 공유 서비스",
+    "text3": "자리는 비었어도, 채워지는 통장"
+  }
+]

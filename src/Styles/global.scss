@@ -1,0 +1,31 @@
+//컴포넌트 파일
+@import "./mixin.scss";
+@import "./header.scss";
+@import "./banner.scss";
+@import "./footer.scss";
+@import "./contentslist.scss";
+@import "./circle.scss";
+
+@import "./followbanner.scss";
+
+@import "./contentsbanner.scss";
+@import "./maincontent.scss";
+
+
+:root {
+  --color-main: #ffa500;
+  --color-sub: #ffcd00;
+  --color-btn: #ff6103;
+  --color-btn-hover: #e64500;
+  --color-bg: #fef9f3;
+  --color-error: #ff0000;
+  --color-point: #426a2d;
+
+  --color-white: #ffffff;
+  --color-light-gray: #dadada;
+  --color-gray: #b6b5b3;
+  --color-dark-gray: #8d8b84;
+
+  --color-main-font: #2c2c2c;
+  --color-sub-font: #f4f4f4;
+}

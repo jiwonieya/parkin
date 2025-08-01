@@ -1,0 +1,201 @@
+// .follow-banner {
+//   display: none; // 기본 숨김
+
+//   // tablet 이상 화면 (768px 이상)
+//   @include tablet {
+//     display: block;
+//     position: fixed;
+//     bottom: 10px;
+//     right: 10px;
+//     width: 220px;
+//     border-radius: 15px 0 0 0;
+//     overflow: hidden;
+//     @include sub-medium;
+//     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+//     z-index: 1000;
+//     background-color: var(--color-white);
+//   }
+
+//   @include desktop {
+//     display: block;
+//   }
+
+//   .banner-item {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 14px 0;
+//     cursor: pointer;
+//     border-bottom: 1px solid var(--color-dark-gray);
+//     width: 100%;
+//     height: 75px;
+//     text-align: center;
+//     transition: background-color 0.3s ease, transform 0.3s ease;
+
+//     .icon {
+//       font-size: 22px;
+//       margin-bottom: 6px;
+//       color: var(--color-main-font);
+//     }
+
+//     .text {
+//       @include sub-basic;
+//       color: var(--color-main-font);
+//     }
+
+//     &.orange {
+//       background-color: var(--color-btn);
+//     }
+
+//     &.yellow {
+//       background-color: var(--color-sub);
+//     }
+
+//     &:last-child {
+//       border-bottom: none;
+//     }
+
+//     &:hover {
+//       background-color: var(--color-dark-gray);
+//       transform: scale(1.05);
+
+//       .icon,
+//       .text {
+//         color: var(--color-white);
+//       }
+//     }
+//   }
+// }
+
+// .floating-close-btn {
+//   display: none; // 기본 숨김
+
+//   @include tablet {
+//     display: flex;
+//   }
+
+//   @include desktop {
+//     display: flex;
+//   }
+
+//   position: fixed;
+//   bottom: 400px;
+//   right: 100px;
+//   background-color: var(--color-dark-gray);
+//   color: var(--color-white);
+//   border: none;
+//   border-radius: 50%;
+//   width: 40px;
+//   height: 40px;
+//   font-size: 22px;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   z-index: 1100;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+//   transition: background-color 0.3s ease, transform 0.3s ease;
+
+//   &:hover {
+//     background-color: var(--color-btn-hover);
+//     transform: scale(1.1);
+//   }
+// }
+
+
+
+.follow-banner {
+  display: none;
+  @include tablet {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    width: 160px;
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    @include sub-medium;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    background-color: var(--color-white);
+  }
+  @include desktop {
+    display: block;
+  }
+  .banner-item {
+    all: unset; // 버튼 기본값 제거
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-dark-gray);
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    .icon {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--color-main-font);
+    }
+    .text {
+      @include sub-basic;
+      color: var(--color-main-font);
+    }
+    &.orange {
+      background-color: var(--color-btn);
+    }
+    &.yellow {
+      background-color: var(--color-sub);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      background-color: var(--color-dark-gray);
+      transform: scale(1.05);
+      .icon,
+      .text {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+.floating-close-btn {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+  @include desktop {
+    display: flex;
+  }
+  position: fixed;
+  bottom: 440px;
+  right: 60px;
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 110;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  &:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.1);
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// font-weight : 300(lighter), 700(bolder) 굵기 참고 해서 조절하세요 (수진)
+
+@import url(https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css);
+// 수트체 cdn으로 해야 굵기 다양하게 되서 바꿔놓을게요. font-weight : 100~900 사이 가능 (수진)
+
+@mixin main-big {
+    font-size: $font-big;
+    font-family: 'SBAggroB';
+    font-weight: 700;
+}
+@mixin main-large {
+    font-size: $font-large;
+    font-family: 'SBAggroB';
+    font-weight: 500;
+}
+@mixin main-basic {
+    font-size: $font-basic;
+    font-family: 'SBAggroB';
+    font-weight: 300;
+}
+@mixin main-small {
+    font-size: $font-small;
+    font-family: 'SBAggroB';
+    font-weight: 300;
+}
+@mixin sub-large {
+    font-size: $font-large;
+    font-family: 'SUIT';
+    font-weight: 700;
+}
+@mixin sub-medium {
+    font-size: $font-medium;
+    font-family: 'SUIT';
+    font-weight: 500;
+}
+@mixin sub-basic {
+    font-size: $font-basic;
+    font-family: 'SUIT';
+    font-weight: 300;
+}
+@mixin sub-small {
+    font-size: $font-small;
+    font-family: 'SUIT';
+    font-weight: 100;
+}
